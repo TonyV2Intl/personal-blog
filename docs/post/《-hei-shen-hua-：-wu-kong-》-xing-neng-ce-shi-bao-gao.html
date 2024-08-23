@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/142370725?v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="总共测试6次。">
+<meta property="og:title" content="《黑神话：悟空》性能测试报告">
+<meta property="og:description" content="总共测试6次。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://TonyV2Intl.github.io/personal-blog/post/%E3%80%8A-hei-shen-hua-%EF%BC%9A-wu-kong-%E3%80%8B-xing-neng-ce-shi-bao-gao.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/142370725?v=4">
+<title>《黑神话：悟空》性能测试报告</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">《黑神话：悟空》性能测试报告</h1>
+<div class="title-right">
+    <a href="https://TonyV2Intl.github.io/personal-blog" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/TonyV2Intl/personal-blog/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>总共测试6次。</p>
+<p>简单过一下配置，机械革命蛟龙16Pro2023版，降电压调教过的R9-7945HX配上满血（TGP140瓦）独显直连的RTX4060Laptop，32G DDR5 4800MHz频率的内存，装游戏的硬盘顺序读7G每秒、4k随机读也有76M每秒，算是PCIE4.0旗舰硬盘。<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9f6088c3-d0e5-44f0-84fc-c38c0fde98ac"><img src="https://github.com/user-attachments/assets/9f6088c3-d0e5-44f0-84fc-c38c0fde98ac" alt="Weixin Image_20240821185002" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/141f9c2d-8598-45fb-86ba-6d9fbb7d6960"><img src="https://github.com/user-attachments/assets/141f9c2d-8598-45fb-86ba-6d9fbb7d6960" alt="Weixin Image_20240821184951" style="max-width: 100%;"></a></p>
+<p>首先先试了一下默认的画质预设，表现十分不错，画质还可以的同时可以跑到90多帧。说明游戏科学对于这个游戏的硬件需求还是非常了解的，针对不同设备帧率和画质之间的平衡都拿捏的恰到好处。<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/7804cdac-72f5-4ed6-a373-60ba597c324f"><img src="https://github.com/user-attachments/assets/7804cdac-72f5-4ed6-a373-60ba597c324f" alt="Weixin Image_20240821184604" style="max-width: 100%;"></a></p>
+<p>在测试原生2k分辨率（TSR，渲染倍率100%）高画质的情况下，连主菜单都开始卡起来了（主界面就已经在正常渲染游戏内场景），进到测试里只剩下30帧，此时显卡功耗能去到108瓦，由此可见DLSS在这个游戏当中对提高性能的作用之大。<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/92f67513-b3f3-4582-a8c0-7045042d481a"><img src="https://github.com/user-attachments/assets/92f67513-b3f3-4582-a8c0-7045042d481a" alt="Weixin Image_20240821184813" style="max-width: 100%;"></a></p>
+<p>鉴于这是一个动作游戏需要高帧率，我也试了一下把画质拉到最低，开启超级性能档DLSS与补帧，渲染分辨率也降到720p并关闭动态模糊（图3）。此时的帧率直接去到了180帧的高位，同时显卡也吃不满，功耗只有80瓦不到。说明这里遇到了内存或缓存瓶颈，与CS低画质的情况类似。这也间接说明了AMD的X3D系列处理器之所以能在游戏（尤其是CS这些竞技类游戏）里表现出色，达到高帧率，就是因为其大容量的L3缓存。<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/15650a69-35b9-4a2c-a7f2-6696d58561ca"><img src="https://github.com/user-attachments/assets/15650a69-35b9-4a2c-a7f2-6696d58561ca" alt="Weixin Image_20240821184847" style="max-width: 100%;"></a></p>
+<p>那么又鉴于这是一个3A大作，我又把画质拉到了影视级并开启超高光追。这里所有等级的光追都是路径追踪，无论开低、中、超高都是。在开启DLSS性能档与补帧的情况下得到了44帧，比原生2k分辨率的高画质还要高，再次证明了DLSS的强大，此时的画面虽然不是原生2K渲染，在DLSS的作用下会有些糊，但是也已经可以以假乱真了。<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/dc1e3279-6137-4cd8-8693-22558258781c"><img src="https://github.com/user-attachments/assets/dc1e3279-6137-4cd8-8693-22558258781c" alt="Weixin Image_20240821184859" style="max-width: 100%;"></a></p>
+<p>最后，我把画质调整成了笔吧评测室推荐的档位（台式机可以去看极客湾），对比默认的画质DLSS的档位从平衡变成了质量，并且关闭了补帧（动作游戏需降低延迟，补帧延迟较高）。此时可以跑到77帧，也算比较流畅。我同时还试了一下超频，在4060核心频率增加255MHz、显存频率增加1000MHz的情况下，功耗来到110瓦的同时帧数也达到了84帧，有9%左右的性能提升，还是很可观的（比Furmark甜甜圈benchmark中5%左右的提升幅度更大）。<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/8b915b3e-1b10-4e3d-af06-1156035ca23a"><img src="https://github.com/user-attachments/assets/8b915b3e-1b10-4e3d-af06-1156035ca23a" alt="Weixin Image_20240821184917" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/f97fda78-8c6c-4ca0-b4c1-f93f769a263b"><img src="https://github.com/user-attachments/assets/f97fda78-8c6c-4ca0-b4c1-f93f769a263b" alt="Weixin Image_20240821184941" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9d521f9b-2072-4664-a75e-076d12b3b66f"><img src="https://github.com/user-attachments/assets/9d521f9b-2072-4664-a75e-076d12b3b66f" alt="Weixin Image_20240821184931" style="max-width: 100%;"></a></p>
+<p>总结一下，《黑神话：悟空》这款游戏虽然性能上限非常高，4090在开启影视级画质原生4K分辨率的时候也只能跑到22帧。但是和《赛博朋克2077》不同的是，黑神话对于低端机器的优化是做的非常好的，在较为低端的机器也能给到一个比较好的体验。正式发售后，这个游戏应该会取代2077成为新一代用来测试显卡的工具，希望50系N卡宣称相较于40系1.5倍的性能提升能在这里发挥作用。</p>
+<p>（原文写于2024年8月14日）</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://TonyV2Intl.github.io/personal-blog">TonyV2's blog</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","TonyV2Intl/personal-blog");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
